@@ -1,6 +1,8 @@
 # shakeitoff
 
-A smaller / minimized (hopefully cleaner) version of [InstallerFileTakeOver](https://github.com/klinix5/InstallerFileTakeOver). There is some shared code but this is mostly rewritten (including a new msi). The `FileOpLock` code is a (slight modified) version pulled out of [angrypolarbearbug2](https://github.com/jackusm/polarbearrepo/tree/f37184a3fc3ffa5ea76035c9fbdee95a39d7b4c3/angrypolarbearbug2). Ownership of those files is super unclear to me but I see we have similar in Metasploit :shrug:.
+A smaller, minimized, and cleaner version of [InstallerFileTakeOver](https://github.com/klinix5/InstallerFileTakeOver) aka the zero-day exploit that is a "variation" of CVE-2021-41379. This version *does not* pop a shell like `InstallerFileTakeOver`. The point of this code was to create a simpler proof of concept that more reliably demonstrates the file creation attack. This proof of concept will create the arbitrary file requested by the user (and copy itself into it to prove writablity). Demonstrating code execution is a trivial excercise left up to the reader.
+
+To understand how the attack works, please see the [AttackerKB write up](https://attackerkb.com/topics/7LstI2clmF/cve-2021-41379/rapid7-analysis).
 
 ## Usage
 
@@ -21,7 +23,7 @@ Allowed options:
 3. -p - the file to overwrite/create. Full path required.
 
 
-The PoC will just copy itself into the target file. Easy enough to tweak though.
+The PoC will just copy itself into the target file. 
 
 
 ## Usage Example
@@ -70,3 +72,9 @@ C:\Users\Public>dir "C:\Program Files\lol"
                1 File(s)        368,640 bytes
                0 Dir(s)  86,015,610,880 bytes free
 ```
+
+## Credit
+
+* This code is influenced by the original [exploit](https://github.com/klinix5/InstallerFileTakeOver) published by Abdelhamid Naceri (also the original vulnerability discoverer!).
+* The `FileOpLock` code is a (slight modified) version pulled out of [angrypolarbearbug2](https://github.com/jackusm/polarbearrepo/tree/f37184a3fc3ffa5ea76035c9fbdee95a39d7b4c3/angrypolarbearbug2)
+* Taylor Swift
