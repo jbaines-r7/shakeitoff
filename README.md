@@ -1,6 +1,6 @@
 # shakeitoff
 
-A smaller, minimized, and cleaner version of [InstallerFileTakeOver](https://github.com/klinix5/InstallerFileTakeOver) aka the zero-day exploit that is a "variation" of CVE-2021-41379 (later assigned [CVE-2021-43883](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-43883). This version *does not* pop a shell like `InstallerFileTakeOver`. The point of this code was to create a simpler proof of concept that more reliably demonstrates the file creation attack. This proof of concept will create the arbitrary file requested by the user (and copy itself into it to prove writablity). Demonstrating code execution is a trivial excercise left up to the reader.
+A smaller, minimized, and cleaner version of [InstallerFileTakeOver](https://github.com/klinix5/InstallerFileTakeOver) aka the zero-day exploit that is a "variation" of CVE-2021-41379 (later assigned [CVE-2021-43883](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-43883)). This version *does not* pop a shell like `InstallerFileTakeOver`. The point of this code was to create a simpler proof of concept that more reliably demonstrates the file creation attack. This proof of concept will create the arbitrary file requested by the user (and copy itself into it to prove writablity). Demonstrating code execution is a trivial excercise left up to the reader.
 
 To understand how the attack works, please see the [AttackerKB write up](https://attackerkb.com/topics/7LstI2clmF/cve-2021-41379/rapid7-analysis).
 
